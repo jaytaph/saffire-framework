@@ -4,7 +4,9 @@ More info: http://saffire-lang.org
 
 
 (make sure the Noxlogic directory is located in the ./modules directory)
-./test.sf:
+
+
+Contents of: ./test.sf:
 ```
 // imports the io class from the io module as "io" into the current namespace
 import io;
