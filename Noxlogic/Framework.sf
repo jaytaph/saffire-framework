@@ -1,0 +1,29 @@
+// Simple framework
+
+import Http::Request;
+import Http::Response;
+import io;
+
+class Framework {
+
+    // Constructor
+    public method __ctor() {
+        io.print("- Constructing framework\n");
+    }
+
+    // "Run" the framework
+    public method run(Request request) {
+        io.print("- Running framework\n");
+
+        // Print request method
+        io.print("Request HTTP method: ", request.getHttpMethod(), "\n");
+
+        // return ok response on GET requests, forbidden when it's not
+        if (request.getHttpMethod() == "GET") {
+            return Response(Response.STATUS_OK, "OK");
+        } else {
+            return Response(405, "METHOD NOT ALLOWED");
+        }
+    }
+
+}

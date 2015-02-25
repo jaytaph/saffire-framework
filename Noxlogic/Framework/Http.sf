@@ -1,0 +1,5 @@
+class Http {
+    public method getHostAddr() {
+        return "127.0.0.1";
+    }
+}

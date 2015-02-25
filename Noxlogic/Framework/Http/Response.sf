@@ -1,0 +1,28 @@
+import io;
+
+class Response {
+    // constants that can be used inside and outside the class
+    public const STATUS_OK = 200;
+    public const STATUS_NOT_FOUND = 404;
+
+    // protected properties
+    protected property http_status;
+    protected property description;
+
+    // Constructor
+    public method __ctor(numerical http_status, string description) {
+        io.print("Response ctor()\n");
+        self.http_status = http_status;
+        self.description = description.upper();
+    }
+
+    // Called when cast to string
+    public method __string() {
+        return "[Response: " + self.http_status.__string() + " " + self.description + "]";
+    }
+
+    // Called when cast to numerical
+    public method __numerical() {
+        return self.http_status;
+    }
+}

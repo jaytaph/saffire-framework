@@ -1,0 +1,30 @@
+
+class Request {
+    // Protected properties
+    protected property http_method;
+    protected property url;
+
+    public method getHttpMethod() {
+        return self.http_method;
+    }
+
+    // can't use 'string foo = null', as null is a null object, not a string object
+    public method setHttpMethod(string http_method, string foo = "", string bar = "") {
+        // Automatically uppercase the http method
+        self.http_method = http_method.upper();
+    }
+
+    public method getUrl() {
+        return self.url;
+    }
+
+    public method setUrl(string url) {
+        self.url = url;
+    }
+
+    // Called when this object is cast to string
+    public method __string() {
+        return "[Request: " + self.getHttpMethod() + " " + self.getUrl() + "]";
+    }
+
+}
